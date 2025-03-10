@@ -1,0 +1,1 @@
+java -jar C:\Users\Andrey\IdeaProjects\LibraryManager\target\LibraryManager-0.0.1-SNAPSHOT.jar
