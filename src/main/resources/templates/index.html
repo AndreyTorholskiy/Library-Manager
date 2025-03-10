@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Бібліотека</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Бібліотека</h1>
+
+<h2>Список книг</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Автор</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+    </tr>
+</table>
+
+<h2>Додати книгу</h2>
+<form action="/books/add" method="post">
+    <label>Назва:</label>
+    <input type="text" name="title" required>
+    <label>Автор:</label>
+    <input type="text" name="author" required>
+    <button type="submit">Додати</button>
+</form>
+
+<h2>Експорт у Excel</h2>
+<form action="/export/currency" method="get">
+    <button type="submit">Експортувати курси валют</button>
+</form>
+
+</body>
+</html>
